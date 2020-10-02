@@ -1,14 +1,17 @@
-<h1>問い合わせ一覧</h1>
+<h1>投稿一覧</h1>
+<p><%= notice %></p>
   <table>
     <tr>
       <th>名前</th>
-      <th>メール</th>
       <th>内容</th>
     </tr>
-  <% @clones.each do |form| %>
+  <% @clones.each do |clone| %>
     <tr>
       <td><%= clone.name %></td>
       <td><%= clone.content %></td>
+      <td><%= link_to "ツイートを編集する", edit_clone_path(clone.id) ,data: { confirm: "本当に編集していいですか？"}  %></td>
+      <td><%= link_to "ツイートを削除する", clone_path(clone.id), method: :delete ,data: { confirm:"本当に削除していいですか？"} %></td>
     </tr>
   <% end %>
   </table>
+  <%= link_to '新規ツイート投稿に進む', new_clone_path %>

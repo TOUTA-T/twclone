@@ -1,0 +1,9 @@
+<h3>以下の内容で、送信しますがよろしいでしょうか？</h3>
+<%= form_with(model: @clone, local: true) do |form| %>
+  <%= form.hidden_field :name %>
+  <%= form.hidden_field :content %>
+  <p>タイトル:<%= @clone.title %></p>
+  <p>本文:<%= @clone.content %></p>
+  <%= form.submit "登録する" %>
+  <%= form.submit "戻る",name: 'back' %>
+<% end %>
