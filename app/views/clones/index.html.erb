@@ -1,0 +1,14 @@
+<h1>問い合わせ一覧</h1>
+  <table>
+    <tr>
+      <th>名前</th>
+      <th>メール</th>
+      <th>内容</th>
+    </tr>
+  <% @clones.each do |form| %>
+    <tr>
+      <td><%= clone.name %></td>
+      <td><%= clone.content %></td>
+    </tr>
+  <% end %>
+  </table>
