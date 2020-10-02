@@ -2,12 +2,12 @@
 <p><%= notice %></p>
   <table>
     <tr>
-      <th>名前</th>
+      <th>id番号</th>
       <th>内容</th>
     </tr>
   <% @clones.each do |clone| %>
     <tr>
-      <td><%= clone.name %></td>
+      <td><%= clone.id %></td>
       <td><%= clone.content %></td>
       <td><%= link_to "ツイートを編集する", edit_clone_path(clone.id) ,data: { confirm: "本当に編集していいですか？"}  %></td>
       <td><%= link_to "ツイートを削除する", clone_path(clone.id), method: :delete ,data: { confirm:"本当に削除していいですか？"} %></td>

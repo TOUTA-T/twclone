@@ -1,11 +1,13 @@
 class ClonesController < ApplicationController
-    before_action :set_clone, only: [:show, :edit, :update, :destroy]
+    before_action :set_clone, only: [:edit, :update, :destroy]
   def index
     @clones = Clone.all
   end
+
   def new
     @clone = Clone.new
   end
+
   def create
     @clone = Clone.new(clone_params)
     if params[:back]
@@ -40,13 +42,10 @@ class ClonesController < ApplicationController
     redirect_to clones_path, notice:"ツイートを削除しました"
   end
 
-  def show
-  end
-
   private
 
   def clone_params
-    params.require(:clone).permit(:name,:content)
+    params.require(:clone).permit(:content)
   end
 
   def set_clone
