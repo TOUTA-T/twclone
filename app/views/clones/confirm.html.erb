@@ -1,8 +1,15 @@
+<header class="header">
+  <ul>
+    <%= link_to "HOME", clones_path %>
+  </ul>
+</header>
 <h3>以下の内容で投稿しますがよろしいでしょうか？</h3>
 <%= form_with(model: @clone, local: true) do |form| %>
-  <%= form.hidden_field :id %>
   <%= form.hidden_field :content %>
   <p>本文:<%= @clone.content %></p>
   <%= form.submit "登録する" %>
   <%= form.submit "戻る",name: 'back' %>
 <% end %>
+<footer class="footer">
+   <p>Copyright © 2020 TOUTA-T.</p>
+</footer>

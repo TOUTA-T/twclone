@@ -1,17 +1,25 @@
+<header class="header">
+  <ul>
+    <%= link_to "HOME", clones_path %>
+  </ul>
+</header>
 <h1>投稿一覧</h1>
 <p><%= notice %></p>
   <table>
     <tr>
-      <th>id番号</th>
+      <th>id</th>
       <th>内容</th>
     </tr>
   <% @clones.each do |clone| %>
     <tr>
-      <td><%= clone.id %></td>
-      <td><%= clone.content %></td>
-      <td><%= link_to "ツイートを編集する", edit_clone_path(clone.id) ,data: { confirm: "本当に編集していいですか？"}  %></td>
-      <td><%= link_to "ツイートを削除する", clone_path(clone.id), method: :delete ,data: { confirm:"本当に削除していいですか？"} %></td>
+      <td class="id"><%= clone.id %></td>
+      <td class="content"><%= clone.content %></td>
+      <td><%= link_to "編集", edit_clone_path(clone.id) ,data: { confirm: "本当に編集していいですか？"}  %></td>
+      <td><%= link_to "削除", clone_path(clone.id), method: :delete ,data: { confirm:"本当に削除していいですか？"} %></td>
     </tr>
   <% end %>
   </table>
-  <%= link_to '新規ツイート投稿に進む', new_clone_path %>
+  <%= link_to ' 新規投稿 ', new_clone_path %>
+  <footer class="footer">
+     <p>Copyright © 2020 TOUTA-T.</p>
+  </footer>
